@@ -27,6 +27,16 @@ def game_hash
   }
 end
 
+def all_players
+  all_player_data = []
+
+  my_game_hash.each do |location, team_data|
+    team_data[:players].each do |player_name, player_data|
+      all_player_data << player_data
+    end
+  end
+end
+
 def num_points_scored(player_name)
   game_hash.each do |location, team_data|
     team_data.each do |key, value|
