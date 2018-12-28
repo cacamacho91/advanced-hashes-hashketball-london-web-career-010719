@@ -107,13 +107,10 @@ def big_shoe_rebounds
   biggest_shoe_size = 0
   #first we find the biggest shoe size by iterating through the players and 
   game_hash.each do |location, team_data|
-    team_data.each do |key, value|
-      if key == :players
-        value.each do |player, player_stats|
-          if player_stats[:shoe] > biggest_shoe_size
-            biggest_shoe_size = player_stats[:shoe]
-            biggest_shoe_name = player
-          end
+    team_data[:players].each do |player, player_stats|
+        if player_stats[:shoe] > biggest_shoe_size
+          biggest_shoe_size = player_stats[:shoe]
+          biggest_shoe_name = player
         end
       end
     end
