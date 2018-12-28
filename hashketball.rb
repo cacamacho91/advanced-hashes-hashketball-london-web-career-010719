@@ -35,6 +35,7 @@ def all_players
       all_player_data << player_data
     end
   end
+  all_player_data
 end
 
 def num_points_scored(player_name)
